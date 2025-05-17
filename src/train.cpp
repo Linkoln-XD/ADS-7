@@ -26,7 +26,7 @@ int Train::getLength() {
   }
 
   Car* crnt = first;
-  crnt->lampFactor = true;
+  crnt->light = true;
 
   while (true) {
     int countOfSteps = 0;
@@ -35,16 +35,16 @@ int Train::getLength() {
       crnt = crnt->next;
       countOfSteps++;
       countOp++;
-    } while (!crnt->lampFactor);
+    } while (!crnt->light);
 
-    crnt->lampFactor = false;
+    crnt->light = false;
 
     for (int i = 0; i < countOfSteps; i++) {
       crnt = crnt->prev;
       countOp++;
     }
 
-    if (!crnt->lampFactor) {
+    if (!crnt->light) {
       return countOfSteps;
     }
   }
