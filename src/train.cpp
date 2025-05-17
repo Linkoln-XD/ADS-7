@@ -20,23 +20,22 @@ void Train::addCar(bool lampFactor) {
 }
 
 int Train::getLength() {
-
   countOp = 0;
-  if(first == nullptr) {
+  if (first == nullptr) {
     return 0;
   }
 
   Car* crnt = first;
   crnt->lampFactor = true;
 
-  while(true) {
+  while (true) {
     int countOfSteps = 0;
 
     do {
       crnt = crnt->next;
       countOfSteps++;
       countOp++;
-    } while(!crnt->lampFactor);
+    } while (!crnt->lampFactor);
 
     crnt->lampFactor = false;
 
